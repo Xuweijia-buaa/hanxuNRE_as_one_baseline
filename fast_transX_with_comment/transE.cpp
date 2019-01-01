@@ -121,7 +121,7 @@ void init() {
                                                                //FILE * fopen ( const char * filename, const char * mode );
 	fin = fopen((inPath + "relation2id.txt").c_str(), "r");　　// inPath  由命令行参数char *, 赋值给string. string 可以加字符串常量
 	tmp = fscanf(fin, "%d", &relationTotal);　　　　　　        // fscanf遇到空格和换行时结束. get relationTotal. 将输入读到变量所在地址　　　　
-	fclose(fin);
+	fclose(fin);                                              // c_str(): 把string 对象转换成c中的字符串样式
 
 	relationVec = (REAL *)calloc(relationTotal * dimension, sizeof(REAL));   //分配|R|*h 个长度为sizeof(float)的连续空间,并随机初始化
 	for (INT i = 0; i < relationTotal; i++) {
